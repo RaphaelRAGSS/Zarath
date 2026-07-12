@@ -4,13 +4,13 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
-  // Configurações de desenvolvimento (o que você já tinha)
+  // Configurações de desenvolvimento
   server: {
     port: 5173,
-    host: true, // expõe na rede local, permitindo acesso pelo IP e QR code
+    host: true, // expõe na rede local
   },
 
-  // Configurações de Build (essenciais para resolver o erro no Vercel)
+  // Configurações de Build (essencial para Vercel)
   build: {
     outDir: 'dist',
     sourcemap: true,
@@ -21,7 +21,7 @@ export default defineConfig({
     }
   },
 
-  // Resolve problemas de importação com caminhos absolutos (/src/main.jsx)
+  // Resolve o erro de importação /src/main.jsx
   resolve: {
     alias: {
       '/': '/src'
